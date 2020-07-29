@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+    <div class="hero-wrap js-fullheight" style="background-image: url({% static 'images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="js-fullheight d-flex justify-content-center align-items-center">
+            <div class="col-md-8 text text-center">
+                <div class="img mb-4" style="background-image: url({% static 'images/author.jpg' %});"></div>
+                <div class="desc">
+                    <h2 class="subheading">Hello I'm</h2>
+                    <h1 class="mb-4">Pooja Thapa</h1>
+                    <p class="mb-4">A Hotel Management graduate, a travel enthusiast and a movie critic.<br/>
+Welcome to the journey through old and critically acclaimed cinema works, into the landscape visits in Nepal, China and India and across college experiences gathered during the bachelors in the city of temples, Kathmandu.</p>
+                    <p><a href="{% url 'about' %}" class="btn-custom">More About Me <span class="ion-ios-arrow-forward"></span></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="ftco-section" id="articles_div">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-2">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <h2 class="mb-4">Articles</h2>
+                    <p>With a sole purpose for eliminating values received by undeserved works, these articles target reality we haven't discussed openly about.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {% for article in articles %}
+                    <div class="col-md-4">
+                        <div class="blog-entry ftco-animate">
+                            <a href="#"><img src="{{ article.thumb.url }}" class="img img-2"></a>
+                            <div class="text text-2 pt-2 mt-3">
+                                <h3 class="mb-4"><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a></h3>
+                                <p class="mb-4">{{article.body|truncatechars:100}}...</p>
+                                <div class="author mb-4 d-flex align-items-center">
+                                    <div class="ml-3 info">
+                                        <h3><span>{{article.dateTime}}</span></h3>
+                                    </div>
+                                </div>
+                                <div class="meta-wrap align-items-center">
+                                    <div class="half">
+                                        <p><a href="{% url 'articles:detail' slug=article.slug %}" class="btn py-2">Continue Reading <span class="ion-ios-arrow-forward"></span></a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

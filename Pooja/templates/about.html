@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="hero-wrap js-fullheight" style="background-image: url({% static 'images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="js-fullheight d-flex justify-content-center align-items-center">
+            <div class="col-md-8 text text-center">
+                <div class="desc">
+                    <h1 class="mb-4">About Me</h1>
+                    <p class="mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                    <ul class="ftco-social mt-3">
+                        <li class="ftco-animate"><a href="https://www.facebook.com/pooja.thapa.393"><span class="icon-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.instagram.com/poojeh/"><span class="icon-instagram"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}
